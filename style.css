@@ -1,0 +1,47 @@
+/* Responsive Adjustments
+Add media queries for smaller screens: */
+
+
+@media (max-width: 400px) {
+    .game-board {
+        grid-template-columns: repeat(3, 80px);
+        gap: 3px;
+    }
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+}
+
+/* Adding Transitions/Animations */
+
+.cell {
+    transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+#reset {
+    transition: background-color 0.3s;
+}
+
+/* Win Highlight (example for winning cells)
+Add a class via JavaScript for winning combo: */
+
+
+.win-cell {
+    background-color: #8bc34a;
+    color: white;
+    animation: winPulse 1s infinite;
+}
+
+@keyframes winPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
